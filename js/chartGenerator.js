@@ -43,7 +43,7 @@ inView('.congresImgElement').on('enter', function (figure) {
         figure.classList.add('is-loading');
 
         newImg = new Image();
-        newImg.src = `../img/people/${e.party.foto}`
+        newImg.src = `../../img/people/${e.party.foto}`
         newImg.classList.add('imgPerson');
         newImg.addEventListener('load', function () {
 

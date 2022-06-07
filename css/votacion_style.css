@@ -129,6 +129,7 @@ main {
   max-width: 1024px;
   margin: 0 auto;
   font-size: 16px;
+  line-height: 30px;
 }
 
 .textBox p b {
@@ -222,6 +223,10 @@ svg .seat.pl, .legendItem-pl div {
 svg .seat.fp, .legendItem-fp div {
   fill: #ff8000;
   background-color: #ff8000;
+}
+svg .seat.bm, .legendItem-bm div {
+  fill: #ff00fb;
+  background-color: #ff00fb;
 }
 svg .seat.rp, .legendItem-rp div {
   fill: #00aae4;
@@ -421,6 +426,9 @@ figure:before {
 .imgPersonBorder-fp {
   border-color: #ff8000;
 }
+.imgPersonBorder-bm {
+  border-color: #ff00fb;
+}
 .imgPersonBorder-rp {
   border-color: #00aae4;
 }
@@ -573,8 +581,8 @@ figure:before {
 }
 .tipeContainer {
   display: flex;
-  width: 36%;
-  justify-content: space-between;
+  width: 50%;
+  justify-content: space-around;
 }
 .tipe {
   display: flex;
@@ -582,48 +590,11 @@ figure:before {
   padding: 10px 20px;
   border-radius: 10px;
 }
-/* .tipe-Afavor {
-  border: 3px solid rgba(0, 128, 0, 1);
-}
-.active-filter-Afavor {
-  background-color: rgba(0, 128, 0, 1);
-}
-.active-filter-Afavor p {
-  color: #fff;
-}
-.tipe-Encontra {
-  border: 3px solid rgba(255, 0, 0, 1);
-}
-.active-filter-Encontra {
-  background-color: rgba(255, 0, 0, 1);
-}
-.active-filter-Encontra p {
-  color: #fff;
-}
-.tipe-Abstencion {
-  border: 3px solid rgba(235, 235, 15, 1);
-}
-.active-filter-Abstencion {
-  background-color: rgba(235, 235, 15, 1);
-}
-.active-filter-Abstencion p {
-  color: #fff;
-}
-.tipe-Novoto {
-  border: 3px solid rgba(54, 54, 54, 1);
-}
-.active-filter-Novoto {
-  background-color: rgba(54, 54, 54, 1);
-}
-.active-filter-Novoto p {
-  color: #fff;
-} */
 .tipe div {
   width: 20px;
   height: 20px;
   border-radius: 100%;
   margin-right: 10px;
-  /* display: none; */
 }
 @media (max-width: 500px) {
   .tipeContainer{
@@ -633,7 +604,6 @@ figure:before {
   .tipe {
     width: 150px;
     margin: 5px;
-    /* justify-content: center; */
   }
   .tipe div {
     width: 17px;

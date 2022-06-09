@@ -1,2 +1,2 @@
-chartGenerator("censuraBetssyChavez.json")
-tableGenerator("censuraBetssyChavez.json")
+chartGenerator("anibal.json")
+tableGenerator("anibal.json")

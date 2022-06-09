@@ -225,8 +225,8 @@ svg .seat.fp, .legendItem-fp div {
   background-color: #ff8000;
 }
 svg .seat.bm, .legendItem-bm div {
-  fill: #ff00fb;
-  background-color: #ff00fb;
+  fill: #FBBD00;
+  background-color: #FBBD00;
 }
 svg .seat.rp, .legendItem-rp div {
   fill: #00aae4;
@@ -427,7 +427,7 @@ figure:before {
   border-color: #ff8000;
 }
 .imgPersonBorder-bm {
-  border-color: #ff00fb;
+  border-color: #FBBD00;
 }
 .imgPersonBorder-rp {
   border-color: #00aae4;
@@ -705,6 +705,7 @@ figure:before {
     height: 10px;
   }
   #congresPersonContainer {
+    justify-content: center;
     width: 100%;
   }
 }

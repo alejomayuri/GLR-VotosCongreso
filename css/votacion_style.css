@@ -190,6 +190,7 @@ svg {
     width: 100%;
     column-count: 2;
     padding: 15px;
+    justify-content: center;
   }
   .legend li {
     width: 160px;

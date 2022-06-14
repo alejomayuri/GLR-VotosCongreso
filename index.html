@@ -37,6 +37,7 @@
     <meta name="HandheldFriendly" content="true">
 
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/carousel.css">
     <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.larepublica.pe/favicon-32x32.png">
 </head>
 
@@ -73,10 +74,9 @@
                 </h1>
                 <div class="textBox">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do. lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit, sed do. lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed
-                        do
+                        Revisa aquí las diversas votaciones de los proyectos de ley presentados ante el Congreso de la
+                        República. Conoce cuáles se han aprobado, cuáles fueron rechazados y cómo votaron las y los
+                        congresistas peruanos ante algunos temas.
                     </p>
                 </div>
             </div>
@@ -88,9 +88,9 @@
                 <div class="votacionesContainer">
                     <div class="element">
                         <a class="elementAncor"
-                            href="./vacancia-presidencial-pedro-castillo-asi-votaron-los-congresistas-y-las-bancadas-en-el-segundo-intento/">
+                            href="./votaciones/vacancia-presidencial-pedro-castillo-asi-votaron-los-congresistas-y-las-bancadas-en-el-segundo-intento/">
                             <div class="elementHeader">
-                                <img src="./vacancia-presidencial-pedro-castillo-asi-votaron-los-congresistas-y-las-bancadas-en-el-segundo-intento/portada/img.jpg"
+                                <img src="./votaciones/vacancia-presidencial-pedro-castillo-asi-votaron-los-congresistas-y-las-bancadas-en-el-segundo-intento/portada/img.jpg"
                                     alt="">
                             </div>
                             <div class="elementText">
@@ -103,30 +103,14 @@
                     </div>
                     <div class="element">
                         <a class="elementAncor"
-                            href="./vacancia-presidencial-pedro-castillo-asi-votaron-los-congresistas-y-las-bancadas-en-el-segundo-intento/">
+                            href="./votaciones/pleno-aprobo-en-segunda-votacion-reducir-la-autonomia-de-sunedu-contrarreforma-universitaria/">
                             <div class="elementHeader">
-                                <img src="./vacancia-presidencial-pedro-castillo-asi-votaron-los-congresistas-y-las-bancadas-en-el-segundo-intento/portada/img.jpg"
+                                <img src="./votaciones/pleno-aprobo-en-segunda-votacion-reducir-la-autonomia-de-sunedu-contrarreforma-universitaria/portada/img.jpg"
                                     alt="">
                             </div>
                             <div class="elementText">
                                 <p>
-                                    Vacancia presidencial Pedro Castillo asi votaron los congresistas y las bancadas en
-                                    el segundo intento
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="element">
-                        <a class="elementAncor"
-                            href="./vacancia-presidencial-pedro-castillo-asi-votaron-los-congresistas-y-las-bancadas-en-el-segundo-intento/">
-                            <div class="elementHeader">
-                                <img src="./vacancia-presidencial-pedro-castillo-asi-votaron-los-congresistas-y-las-bancadas-en-el-segundo-intento/portada/img.jpg"
-                                    alt="">
-                            </div>
-                            <div class="elementText">
-                                <p>
-                                    Vacancia presidencial Pedro Castillo asi votaron los congresistas y las bancadas en
-                                    el segundo intento
+                                    Pleno aprobó en segunda votacion reducir la autonomia de la SUNEDU
                                 </p>
                             </div>
                         </a>
@@ -134,6 +118,7 @@
                 </div>
             </div>
             <div class="forDate"></div>
+            <div class="especiales__container"></div>
         </section>
     </main>
     <footer>
@@ -153,44 +138,78 @@
     </footer>
 </body>
 <script>
-    fetch("votaciones.json")
+    fetch("prueba.json")
         .then(response => response.json())
         .then(data => {
             const votaciones = data;
-            let dates = [];
-            for (let i = 0; i < votaciones.length; i++) {
-                if (dates.indexOf(votaciones[i].date) == -1) {
-                    dates.push(votaciones[i].date);
+            const meses = votaciones.map(votacion => votacion.mes);
+            console.log(votaciones)
+            console.log(meses)
+            const especiales__container = document.querySelector('.especiales__container');
+            const mesesContainer = votaciones.map(votacion => {
+                return (
+                    `<div id=${votacion.id} class="mes">
+                        <h3>${votacion.mes}</h3>
+                        <div class="button__container">
+                            <button id=prev__button__${votacion.id}>atras</button>
+                            <button id=next__button__${votacion.id}>adelante</button>
+                        </div>
+                    </div>`
+                )
+            })
+            especiales__container.innerHTML = mesesContainer.join('');
+            const mesElement = document.querySelectorAll('.mes');
+            console.log(mesElement[0].id)
+
+            votaciones.forEach(votacion => {
+                const especialPorMesContainer = document.querySelector(`#${votacion.id}`);
+                const especialPorMes = votacion.especiales.map(especial => {
+                    return (
+                        `
+                            <div class=especial__${votacion.id}>
+                                <p>${especial.titulo}</p>
+                            </div>
+                        `
+                    )
+                })
+                const g = document.createElement('div')
+                g.setAttribute("id", `especiales-${votacion.id}`)
+                especialPorMesContainer.appendChild(g).innerHTML = especialPorMes.join('')
+
+                const especiales = document.querySelectorAll(`.especial__${votacion.id}`);
+
+                const onlyShowOne = (a) => {
+                    especiales.forEach(especial => {
+                        especial.style.display = 'none';
+                    })
+                    especiales[a].style.display = 'block';
                 }
-            }
-            const forDate = document.querySelector(".forDate");
-            const datesHTML = dates.map(date => {
-                return `
-                    <div class="date">
-                        <h3>${date}</h3>
-                    </div>
-                    <div class="votacionesContainer">
-                        ${votaciones.map(votacion => {
-                            if (votacion.date == date) {
-                                return `
-                                    <div class="element">
-                                        <a class="elementAncor" href="${votacion.url}">
-                                            <div class="elementHeader">
-                                                <img src="${votacion.portada}" alt="">
-                                            </div>
-                                            <div class="elementText">
-                                                <p>${votacion.titulo}</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                `
-                            }
-                        }).join("")}
-                    </div>
-                `
-            }).join("");
-            forDate.innerHTML = datesHTML;
+
+                onlyShowOne(0)
+                
+                const this__next__button = document.querySelector(`#next__button__${votacion.id}`)
+                const this__prev__button = document.querySelector(`#prev__button__${votacion.id}`)
+                const handleNext = () => {
+                    const especialesArray = Array.from(especiales);
+                    const a = especialesArray.findIndex(especial => especial.style.display === 'block')
+                    if (a < especialesArray.length - 1) {
+                        onlyShowOne(a + 1)
+                    } else {
+                        onlyShowOne(0)
+                    }
+                }
+                const handlePrev = () => {
+                    const especialesArray = Array.from(especiales);
+                    const a = especialesArray.findIndex(especial => especial.style.display === 'block')
+                    if (a > 0) {
+                        onlyShowOne(a - 1)
+                    } else {
+                        onlyShowOne(especialesArray.length - 1)
+                    }
+                }
+                this__next__button.addEventListener('click', handleNext)
+                this__prev__button.addEventListener('click', handlePrev)
+            })
         })
 </script>
-
 </html>

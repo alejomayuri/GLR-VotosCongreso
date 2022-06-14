@@ -138,6 +138,7 @@ section {
     color: #fff;
     margin-top: 20px;
     line-height: 30px;
+    text-align: center;
 }
 
 .elementAncor {
@@ -231,10 +232,21 @@ footer p {
         padding: 30px 30px;
     }
 
-    /* .votacionesContainer {
-        flex-direction: column;
-        align-items: center;
-    } */
+    .portada-text-container {
+        position: absolute;
+        left: 50%;
+        margin-left: -350px;
+        top: 50%;
+        margin-top: -175px;
+        width: 670px;
+        padding: 15px;
+    }
+
+    .portada h1 {
+        width: 100%;
+        font-size: 48px;
+    }
+
     .votacionesContainer .element {
         width: 210px;
     }
@@ -262,4 +274,24 @@ footer p {
         margin-bottom: 20px;
         width: 100%;
     }
+    .portada-text-container {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        left: 0;
+        padding: 0;
+        background: rgba(0, 0, 0, .5);
+    }
+    .portada h1 {
+        width: 100%;
+        font-size: 31px;
+        margin-top: 180px;
+      }
+      .textBox p {
+        font-size: 17px;
+        margin-top: 10px;
+      }
 }

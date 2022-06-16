@@ -148,7 +148,7 @@
             const especiales__container = document.querySelector('.especiales__container');
             const mesesContainer = votaciones.map(votacion => {
                 return (
-                    `<div id=${votacion.id} class="mes">
+                    `<div id=${votacion.id} class="date mes">
                         <h3>${votacion.mes}</h3>
                         <div class="button__container">
                             <button id=prev__button__${votacion.id}>atras</button>
@@ -166,27 +166,38 @@
                 const especialPorMes = votacion.especiales.map(especial => {
                     return (
                         `
-                            <div class=especial__${votacion.id}>
-                                <p>${especial.titulo}</p>
+                            <div class="element especial__${votacion.id}">
+                                <a href=${especial.url}>
+                                    <img src=${especial.portada} alt=${especial.titulo}>
+                                    <div class="elementText">
+                                        <p>${especial.titulo}</p>
+                                    </div>
+                                </a>
                             </div>
                         `
                     )
                 })
                 const g = document.createElement('div')
                 g.setAttribute("id", `especiales-${votacion.id}`)
+                g.setAttribute("class", `votacionesContainer`)
                 especialPorMesContainer.appendChild(g).innerHTML = especialPorMes.join('')
 
                 const especiales = document.querySelectorAll(`.especial__${votacion.id}`);
 
                 const onlyShowOne = (a) => {
-                    especiales.forEach(especial => {
-                        especial.style.display = 'none';
-                    })
-                    especiales[a].style.display = 'block';
+                    let widthDevice = window.innerWidth;
+                    let widthFotChart
+
+                    if (widthDevice < 500) {
+                        especiales.forEach(especial => {
+                            especial.style.display = 'none';
+                        })
+                        especiales[a].style.display = 'block';
+                    }
                 }
 
                 onlyShowOne(0)
-                
+
                 const this__next__button = document.querySelector(`#next__button__${votacion.id}`)
                 const this__prev__button = document.querySelector(`#prev__button__${votacion.id}`)
                 const handleNext = () => {
@@ -212,4 +223,5 @@
             })
         })
 </script>
+
 </html>

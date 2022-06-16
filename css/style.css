@@ -171,13 +171,14 @@ section {
 }
 
 .date {
-    border-bottom: 2px solid #000;
+    padding: 0px 20px;
+    width: calc(100% - 40px);
     margin-bottom: 30px;
-    width: 100%;
 }
 
 .date h3 {
     text-align: center;
+    border-bottom: 2px solid #000;
     margin: auto;
     padding: 10px;
 }
@@ -185,7 +186,7 @@ section {
 .votacionesContainer {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 50px;
+    margin: 50px 0;
 }
 
 .votacionesContainer .element {
@@ -196,8 +197,12 @@ section {
 
 .element img {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     object-fit: cover;
+}
+
+.element a {
+    text-decoration: none;
 }
 
 .elementText p {
@@ -205,6 +210,10 @@ section {
     font-size: 15px;
     font-weight: bold;
     line-height: 20px;
+}
+
+.button__container {
+    display: none;
 }
 
 /*Footer*/
@@ -267,7 +276,7 @@ footer p {
     .votacionesContainer {
         flex-direction: column;
         align-items: center;
-        margin-bottom: 30px;
+        margin: 30px 0;
     }
 
     .votacionesContainer .element {
@@ -289,9 +298,17 @@ footer p {
         width: 100%;
         font-size: 31px;
         margin-top: 180px;
-      }
+    }
       .textBox p {
         font-size: 17px;
         margin-top: 10px;
-      }
+    }
+
+    .button__container {
+        margin: 0 auto;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        width: calc(100% - 40px);
+    }
 }

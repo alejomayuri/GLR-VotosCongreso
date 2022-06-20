@@ -37,7 +37,6 @@
     <meta name="HandheldFriendly" content="true">
 
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="stylesheet" type="text/css" href="./css/carousel.css">
     <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.larepublica.pe/favicon-32x32.png">
 </head>
 
@@ -137,91 +136,7 @@
         </div>
     </footer>
 </body>
-<script>
-    fetch("prueba.json")
-        .then(response => response.json())
-        .then(data => {
-            const votaciones = data;
-            const meses = votaciones.map(votacion => votacion.mes);
-            console.log(votaciones)
-            console.log(meses)
-            const especiales__container = document.querySelector('.especiales__container');
-            const mesesContainer = votaciones.map(votacion => {
-                return (
-                    `<div id=${votacion.id} class="date mes">
-                        <h3>${votacion.mes}</h3>
-                        <div class="button__container">
-                            <button id=prev__button__${votacion.id}>atras</button>
-                            <button id=next__button__${votacion.id}>adelante</button>
-                        </div>
-                    </div>`
-                )
-            })
-            especiales__container.innerHTML = mesesContainer.join('');
-            const mesElement = document.querySelectorAll('.mes');
-            console.log(mesElement[0].id)
 
-            votaciones.forEach(votacion => {
-                const especialPorMesContainer = document.querySelector(`#${votacion.id}`);
-                const especialPorMes = votacion.especiales.map(especial => {
-                    return (
-                        `
-                            <div class="element especial__${votacion.id}">
-                                <a href=${especial.url}>
-                                    <img src=${especial.portada} alt=${especial.titulo}>
-                                    <div class="elementText">
-                                        <p>${especial.titulo}</p>
-                                    </div>
-                                </a>
-                            </div>
-                        `
-                    )
-                })
-                const g = document.createElement('div')
-                g.setAttribute("id", `especiales-${votacion.id}`)
-                g.setAttribute("class", `votacionesContainer`)
-                especialPorMesContainer.appendChild(g).innerHTML = especialPorMes.join('')
-
-                const especiales = document.querySelectorAll(`.especial__${votacion.id}`);
-
-                const onlyShowOne = (a) => {
-                    let widthDevice = window.innerWidth;
-                    let widthFotChart
-
-                    if (widthDevice < 500) {
-                        especiales.forEach(especial => {
-                            especial.style.display = 'none';
-                        })
-                        especiales[a].style.display = 'block';
-                    }
-                }
-
-                onlyShowOne(0)
-
-                const this__next__button = document.querySelector(`#next__button__${votacion.id}`)
-                const this__prev__button = document.querySelector(`#prev__button__${votacion.id}`)
-                const handleNext = () => {
-                    const especialesArray = Array.from(especiales);
-                    const a = especialesArray.findIndex(especial => especial.style.display === 'block')
-                    if (a < especialesArray.length - 1) {
-                        onlyShowOne(a + 1)
-                    } else {
-                        onlyShowOne(0)
-                    }
-                }
-                const handlePrev = () => {
-                    const especialesArray = Array.from(especiales);
-                    const a = especialesArray.findIndex(especial => especial.style.display === 'block')
-                    if (a > 0) {
-                        onlyShowOne(a - 1)
-                    } else {
-                        onlyShowOne(especialesArray.length - 1)
-                    }
-                }
-                this__next__button.addEventListener('click', handleNext)
-                this__prev__button.addEventListener('click', handlePrev)
-            })
-        })
-</script>
+<script src="./js/votacionesGenerator.js"></script>
 
 </html>

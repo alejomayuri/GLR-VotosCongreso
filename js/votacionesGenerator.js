@@ -49,7 +49,7 @@ fetch("../prueba.json")
 
                 const onlyShowOne = (a) => {
                     let widthDevice = window.innerWidth;
-                    let widthFotChart
+                    // let widthFotChart
 
                     if (widthDevice < 500) {
                         especiales.forEach(especial => {

@@ -1,3 +1,4 @@
+const percentage__chart = document.getElementById("percentage__chart");
 const figures = document.querySelectorAll('figure');
 const congresImgElement = document.querySelector('.congresImgElement');
 const imgPerson = document.querySelector(".imgPerson");

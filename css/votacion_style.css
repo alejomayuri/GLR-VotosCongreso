@@ -136,6 +136,15 @@ main {
   font-size: 15px;
 }
 
+.segment {
+  width:100%;
+  height:30px;
+}
+
+.segment p {
+  color: #fff
+}
+
 .legend ul {
   margin: 0px auto 0px auto;
   column-count: 3;

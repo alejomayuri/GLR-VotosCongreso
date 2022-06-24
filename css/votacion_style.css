@@ -136,9 +136,29 @@ main {
   font-size: 15px;
 }
 
+#percentage__chart {
+  display: flex;
+  max-width: 1024px;
+  margin: 35px auto 25px auto;
+  width: 95%;
+}
+
+#percentage__chart div {
+  position: relative;
+}
+
+#percentage__chart div p.percentage_legend {
+  font-size: 15px;
+  position: absolute;
+  top: -20px;
+}
+
 .segment {
-  width:100%;
-  height:30px;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 3px;
 }
 
 .segment p {
@@ -210,6 +230,20 @@ svg {
   svg {
       width: 350px;
       height: 180px;
+  }
+  #percentage__chart {
+    display: flex;
+    max-width: 1024px;
+    margin: 0 auto 25px auto;
+    width: 92%;
+    flex-direction: column;
+  }
+  #percentage__chart > div {
+    margin: 15px 0;
+  }
+  #percentage__chart div p.percentage_legend {
+    font-size: 14px;
+    width: 100px;
   }
 }
 

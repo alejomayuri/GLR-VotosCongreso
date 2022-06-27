@@ -614,6 +614,20 @@ figure:before {
   }
 }
 
+.single__search__container {
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.single__search__container select {
+  width: 200px;
+  border: solid 1px #000;
+  background: #fff;
+  padding: 5px;
+}
+
 .vacanciaTipes {
   display: flex;
   justify-content: space-around;

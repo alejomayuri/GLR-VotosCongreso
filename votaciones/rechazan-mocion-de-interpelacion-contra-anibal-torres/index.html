@@ -351,6 +351,12 @@
             congresistas.
          </p>
       </div>
+      <div class="single__search__container">
+         <select id="single__search"></select>
+         <div>
+            <p id="single__search__response"></p>
+         </div>
+      </div>
       <div class="textBox">
          <p>
             Presiona sobre el tipo de votación para agrupar a los y las congresistas de acuerdo con cada postura tomada.
@@ -461,6 +467,27 @@
             rss(nameSocial);
          };
       });
+   </script>
+   <script>
+      const singleSearch = document.getElementById("single__search");
+      const singleSearchResponse = document.getElementById("single__search__response");
+      fetch("anibal.json")
+         .then(response => response.json())
+         .then(data => {
+            const congresPersonNames = data.map(item => item.Congresista);
+            const alfaveticOrder = congresPersonNames.sort();
+            const selectByName = alfaveticOrder.map(item => {
+               return (`
+                  <option value="${item}">${item}</option>
+               `);
+            });
+            singleSearch.innerHTML = selectByName.join("");
+
+            singleSearch.addEventListener("change", () => {
+               const singleSearchVoto = data.filter(item => item.Congresista === singleSearch.value)[0].Vacancia;
+               singleSearchResponse.innerHTML = singleSearchVoto;
+            })
+         });
    </script>
 </body>
 

@@ -1,13 +1,15 @@
 fetch("../prueba.json")
-        .then(response => response.json())
-        .then(data => {
-            const votaciones = data;
+    .then(response => response.json())
+    .then(data => {
+        const votaciones = data;
+        let widthDevice = window.innerWidth;
+        function renderEspeciales() {
             const especiales__container = document.querySelector('.especiales__container');
             const mesesContainer = votaciones.map(votacion => {
                 return (
                     `<div id=${votacion.id} class="date mes">
                         <h3>${votacion.mes}</h3>
-                        <div class="button__container">
+                        <div class="button__container" style="display: ${votacion.especiales.length === 1 || widthDevice > 500 ? 'none' : 'flex'}">
                             <button id=prev__button__${votacion.id}>
                                 <svg data-name="Layer 1" id="Layer_1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                     <polygon points="65 80 65 20 35 50 65 80"/>
@@ -48,9 +50,6 @@ fetch("../prueba.json")
                 const especiales = document.querySelectorAll(`.especial__${votacion.id}`);
 
                 const onlyShowOne = (a) => {
-                    let widthDevice = window.innerWidth;
-                    // let widthFotChart
-
                     if (widthDevice < 500) {
                         especiales.forEach(especial => {
                             especial.style.display = 'none';
@@ -84,4 +83,12 @@ fetch("../prueba.json")
                 this__next__button.addEventListener('click', handleNext)
                 this__prev__button.addEventListener('click', handlePrev)
             })
-        })
+        }
+        window.addEventListener("resize", function () {
+            widthDevice = window.innerWidth;
+                renderEspeciales()
+            }
+        );
+        renderEspeciales()
+
+    })

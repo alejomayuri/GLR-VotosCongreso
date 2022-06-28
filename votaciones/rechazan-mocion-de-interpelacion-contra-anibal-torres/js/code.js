@@ -1,3 +1,2 @@
-percentageChartGenerator("anibal.json")
+useData("anibal.json")
 chartGenerator("anibal.json")
-tableGenerator("anibal.json")

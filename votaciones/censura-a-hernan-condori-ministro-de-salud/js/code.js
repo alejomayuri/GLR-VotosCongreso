@@ -1,3 +1,2 @@
-percentageChartGenerator("censuraHernanCondori.json")
+useData("censuraHernanCondori.json")
 chartGenerator("censuraHernanCondori.json")
-tableGenerator("censuraHernanCondori.json")

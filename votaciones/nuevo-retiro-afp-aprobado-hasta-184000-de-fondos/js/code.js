@@ -1,3 +1,2 @@
-percentageChartGenerator("afp.json")
+useData("afp.json")
 chartGenerator("afp.json")
-tableGenerator("afp.json")

@@ -615,10 +615,12 @@ figure:before {
 }
 
 .single__search__container {
-  width: 800px;
+  width: 340px;
   margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  margin-bottom: 25px;
 }
 
 .single__search__container select {
@@ -626,6 +628,16 @@ figure:before {
   border: solid 1px #000;
   background: #fff;
   padding: 5px;
+  font-size: 15px;
+}
+
+.single__search__container div {
+  width: 110px;
+}
+
+.single__search__container div p {
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .vacanciaTipes {

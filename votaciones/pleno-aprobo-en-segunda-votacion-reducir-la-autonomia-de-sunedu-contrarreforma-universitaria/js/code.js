@@ -1,3 +1,2 @@
-percentageChartGenerator("sunedu.json")
+useData("sunedu.json")
 chartGenerator("sunedu.json")
-tableGenerator("sunedu.json")

@@ -16,16 +16,6 @@ const singleVote = dataJson => {
     const showVote = () => {
         const singleSearchVoto = dataJson.filter(item => item.Congresista === singleSearch.value)[0].Vacancia;
         singleSearchResponse.innerHTML = singleSearchVoto;
-
-        if (singleSearchVoto === "A favor") {
-            singleSearchResponse.style.color = "#00b300";
-        } else if (singleSearchVoto === "En contra") {
-            singleSearchResponse.style.color = "#ff0000";
-        } else if (singleSearchVoto === "Abstención") {
-            singleSearchResponse.style.color = "#ffc000";
-        } else if (singleSearchVoto === "No votó") {
-            singleSearchResponse.style.color = "#000000";
-        }
     }
 
     showVote()

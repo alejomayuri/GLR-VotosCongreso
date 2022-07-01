@@ -95,7 +95,7 @@ span [class*="btn-"] {
 .portada-text-container {
     position: absolute;
     left: 50%;
-    margin-left: -500px;
+    margin-left: -527px;
     top: 50%;
     margin-top: -190px;
 }
@@ -147,7 +147,7 @@ section {
 
 .destacado {
     padding: 20px 20px 30px;
-    background: #727272;
+    background: #9B9A9A
 }
 
 .destacado h3 {
@@ -187,7 +187,7 @@ section {
 .votacionesContainer {
     display: flex;
     justify-content: space-around;
-    margin: 50px 0;
+    margin: 10px 0;
 }
 
 .votacionesContainer .element {
@@ -226,7 +226,7 @@ footer {
 footer p {
     color: #fff;
     text-align: center;
-    font-size: 17px;
+    font-size: 15px;
 }
   
 .footer-content {

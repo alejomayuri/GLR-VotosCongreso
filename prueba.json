@@ -4,7 +4,7 @@
         "mes": "Junio 2022",
         "especiales": [
             {
-                "titulo": "Rrechazan mocion de interpelacion contra Anibal Torres",
+                "titulo": "Congreso rechazó moción de interpelación contra Aníbal Torres",
                 "url" : "./votaciones/rechazan-mocion-de-interpelacion-contra-anibal-torres/",
                 "portada": "./votaciones/rechazan-mocion-de-interpelacion-contra-anibal-torres/portada/img.jpg"
             }
@@ -15,19 +15,19 @@
         "mes": "Mayo 2022",
         "especiales": [
             {
-                "titulo": "Pleno censura a ministra de trabajo Betssy Chavez",
+                "titulo": "Betssy Chávez, ministra de Trabajo, fue censurada por el Pleno con 71 votos ",
                 "url" : "./votaciones/pleno-censura-a-ministra-de-trabajo-betssy-chavez/",
                 "portada": "./votaciones/pleno-censura-a-ministra-de-trabajo-betssy-chavez/portada/img.jpg"
             },
             {
-                "titulo": "Pleno aprobó en segunda votacion reducir la autonomia de la SUNEDU",
+                "titulo": "En segunda votación, Congreso aprobó reducir la autonomía de la Sunedu ",
                 "url" : "./votaciones/pleno-aprobo-en-segunda-votacion-reducir-la-autonomia-de-sunedu-contrarreforma-universitaria/",
                 "portada": "./votaciones/pleno-aprobo-en-segunda-votacion-reducir-la-autonomia-de-sunedu-contrarreforma-universitaria/portada/img.jpg"
             },
             {
-                "titulo": "Nuevo retiro de afp aprobado, hasta S/184000 de fondos",
-                "url" : "./votaciones/nuevo-retiro-afp-aprobado-hasta-184000-de-fondos/",
-                "portada": "./votaciones/nuevo-retiro-afp-aprobado-hasta-184000-de-fondos/portada/img.jpg"
+                "titulo": "Congreso aprobó retiro de hasta 4 UIT de las AFP",
+                "url" : "./votaciones/nuevo-retiro-afp-aprobado-hasta-18400-de-fondos/",
+                "portada": "./votaciones/nuevo-retiro-afp-aprobado-hasta-18400-de-fondos/portada/img.jpg"
             }
         ]
     },
@@ -36,12 +36,12 @@
         "mes": "Marzo 2022",
         "especiales": [
             {
-                "titulo": "Censura a Hernan Condori, ministro de salud",
+                "titulo": "Congreso censuró a Hernán Condori, ministro de Salud, con 71 votos",
                 "url" : "./votaciones/censura-a-hernan-condori-ministro-de-salud/",
                 "portada": "./votaciones/censura-a-hernan-condori-ministro-de-salud/portada/img.jpg"
             },
             {
-                "titulo": "Vacancia presidencial Pedro Castillo asi votaron los congresistas y las bancadas en el segundo intento",
+                "titulo": "Congreso rechazó la vacancia presidencial contra Pedro Castillo ",
                 "url" : "./votaciones/vacancia-presidencial-pedro-castillo-asi-votaron-los-congresistas-y-las-bancadas-en-el-segundo-intento/",
                 "portada": "./votaciones/vacancia-presidencial-pedro-castillo-asi-votaron-los-congresistas-y-las-bancadas-en-el-segundo-intento/portada/img.jpg"
             }

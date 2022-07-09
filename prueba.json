@@ -4,6 +4,11 @@
         "mes": "Junio 2022",
         "especiales": [
             {
+                "titulo": "Pleno censuró a ministro del Interior, Dimitri Senmache",
+                "url" : "./votaciones/censura-al-ministro-del-interior-dimitri-senmache-asi-votaron-congresistas-bancadas/",
+                "portada": "./votaciones/censura-al-ministro-del-interior-dimitri-senmache-asi-votaron-congresistas-bancadas/portada/img.jpg"
+            },
+            {
                 "titulo": "Congreso rechazó moción de interpelación contra Aníbal Torres",
                 "url" : "./votaciones/rechazan-mocion-de-interpelacion-contra-anibal-torres/",
                 "portada": "./votaciones/rechazan-mocion-de-interpelacion-contra-anibal-torres/portada/img.jpg"

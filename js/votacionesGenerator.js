@@ -1,4 +1,4 @@
-fetch("../prueba.json")
+fetch("https://especiales.larepublica.pe/congreso-votacion/prueba.json")
     .then(response => response.json())
     .then(data => {
         const votaciones = data;
@@ -33,7 +33,7 @@ fetch("../prueba.json")
                         `
                             <div class="element especial__${votacion.id}">
                                 <a href=${especial.url}>
-                                    <img src=${especial.portada} alt=${especial.titulo}>
+                                    <img src=${especial.portada} alt='${especial.titulo}'>
                                     <div class="elementText">
                                         <p>${especial.titulo}</p>
                                     </div>

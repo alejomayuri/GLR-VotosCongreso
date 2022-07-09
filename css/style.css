@@ -294,11 +294,12 @@ footer p {
         left: 0;
         padding: 0;
         background: rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
     }
     .portada h1 {
         width: 100%;
         font-size: 31px;
-        margin-top: 180px;
     }
       .textBox p {
         font-size: 17px;

@@ -1,0 +1,6 @@
+<ifmodule mod_expires.c>
+    <filesmatch "\.(jpg|JPG|gif|GIF|png|css|ico)$">
+        ExpiresActive on
+        ExpiresDefault "access plus 7 day"
+    </filesmatch>
+</ifmodule>

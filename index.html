@@ -67,19 +67,21 @@
     <main>
         <div class="portada">
             <div class="portada-text-container">
-                <h1>
-                    Votación en el Congreso: ¿cuál es la posición de los congresistas y las bancadas en los proyectos de
-                    ley?
-                </h1>
-                <div class="textBox">
-                    <p>
-                        Revisa aquí las diversas votaciones de los proyectos de ley presentados ante el Congreso de la
-                        República. Conoce cuáles se han aprobado, cuáles fueron rechazados y cómo votaron las y los
-                        congresistas peruanos ante algunos temas.
-                    </p>
+                <div>
+                    <h1>
+                        Votación en el Congreso: ¿cuál es la posición de los congresistas y las bancadas en los proyectos de
+                        ley?
+                    </h1>
+                    <div class="textBox">
+                        <p>
+                            Revisa aquí las diversas votaciones de los proyectos de ley presentados ante el Congreso de la
+                            República. Conoce cuáles se han aprobado, cuáles fueron rechazados y cómo votaron las y los
+                            congresistas peruanos ante algunos temas.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <img src="./img/portada-congreso.png" alt="portada">
+            <img src="./img/portada-congreso.jpg" alt="portada">
         </div>
         <section>
             <div class="destacado">
@@ -118,6 +120,7 @@
             <div class="forDate"></div>
             <div class="especiales__container"></div>
         </section>
+        <iframe style="margin: 0 auto;" height="680px" width="100%" src="https://especiales.larepublica.pe/congreso-votacion/votaciones/censura-al-ministro-del-interior-dimitri-senmache-asi-votaron-congresistas-bancadas/embed/" frameborder="0"></iframe>
     </main>
     <footer>
         <div class="footer">
@@ -137,5 +140,45 @@
 </body>
 
 <script src="./js/votacionesGenerator.js"></script>
+<script>
+    var btnSocial = document.querySelectorAll(".btn-Social");
 
+    const rss = nameSocial => {
+       var link = null;
+       switch (nameSocial) {
+          case "facebook": link = "https://www.facebook.com/sharer/sharer.php?u=";
+             break;
+          case "twitter": link = "https://twitter.com/share?url=";
+             break;
+          default:
+             break;
+       }
+
+       var url = window.location.href;
+
+       var text = document.querySelector('meta[name="description"]').content;
+
+       document
+          .getElementsByClassName("btn-wsp")[0]
+          .setAttribute(
+             "href",
+             "https://api.whatsapp.com/send?text=" + text + " " + url
+          );
+
+       const popupText = nameSocial == "twitter" ? "&text=" + text : "";
+
+       window.open(
+          link + url + popupText,
+          nameSocial + "-popup",
+          "height=350,width=600"
+       );
+    };
+
+    Object.keys(btnSocial).map(item => {
+       btnSocial[item].onclick = function () {
+          var nameSocial = btnSocial[item].getAttribute("data-social");
+          rss(nameSocial);
+       };
+    });
+ </script>
 </html>

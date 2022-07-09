@@ -292,6 +292,14 @@ svg .seat.pd, .legendItem-pd div {
   fill: #adacac;
   background-color: #adacac;
 }
+svg .seat.pp, .legendItem-pp div {
+  fill: #00a8a6;
+  background-color: #00a8a6;
+}
+svg .seat.pb, .legendItem-pb div {
+  fill: #79579a;
+  background-color: #79579a;
+}
 svg .seat.na, .legendItem-na div {
   fill: #000000;
   background-color: #000000;
